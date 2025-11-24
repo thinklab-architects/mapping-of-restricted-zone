@@ -11,6 +11,7 @@ const MAPBOX_STYLE_URL = "mapbox://styles/mapbox/streets-v11";
 // 若想使用內政部地圖服務中心 (NLSC) 的 WMS 底圖，可設定 WMS 瓦片 URL。
 // 預設使用 LANDSECT 圖層，若要停用可留空。
 const WMS_TILE_URL =
+  // 參數含 crs=EPSG:4326 與 bbox={bbox-epsg-4326}，便於直接疊在 Mapbox 上。
   "https://wms.nlsc.gov.tw/wms?service=WMS&request=GetMap&version=1.3.0&layers=LANDSECT&styles=default&format=image/png&transparent=true&crs=EPSG:4326&bbox={bbox-epsg-4326}&width=256&height=256&dpiMode=7&tilePixelRatio=0&featureCount=10&contextualWMSLegend=0";
 
 // 來自政府資料開放平台的 GeoJSON API 連結。
