@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>地段號對照地段名示範地圖</title>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <div>
+        <h1>地段號對照地段名示範地圖</h1>
+        <p>
+          使用 Mapbox GL JS 載入來自政府資料開放平台的底圖與地段資料，
+          透過點擊或輸入地段號來查詢對應的地段名。
+        </p>
+      </div>
+      <div class="config-warning" id="config-warning" hidden>
+        請先建立 <code>config.js</code> 並設定 MAPBOX_TOKEN 與 LAND_API_URL。
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="controls">
+        <div class="card">
+          <h2>設定</h2>
+          <p>
+            將 <code>config.example.js</code> 複製為 <code>config.js</code>，
+            並填入 Mapbox Access Token、底圖 Style URL，以及政府資料開放平台的地段 GeoJSON API 連結。
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>查詢地段號</h2>
+          <form id="land-number-form">
+            <label for="land-number-input">輸入地段號：</label>
+            <div class="input-row">
+              <input
+                id="land-number-input"
+                name="landNumber"
+                type="text"
+                placeholder="例如：123"
+                autocomplete="off"
+                required
+              />
+              <button type="submit">查詢</button>
+            </div>
+            <p class="hint">查詢會以屬性名稱 <code>LAND_NUMBER_PROPERTY</code> 比對。</p>
+          </form>
+        </div>
+
+        <div class="card" id="feature-details" hidden>
+          <h2>地段資訊</h2>
+          <dl>
+            <dt>地段號</dt>
+            <dd id="detail-number">—</dd>
+            <dt>地段名</dt>
+            <dd id="detail-name">—</dd>
+          </dl>
+          <p class="hint">點擊地圖或從查詢結果選取地塊以檢視。</p>
+        </div>
+      </section>
+
+      <section class="map-panel">
+        <div id="map" class="map"></div>
+      </section>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
