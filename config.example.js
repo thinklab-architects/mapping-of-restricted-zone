@@ -4,6 +4,8 @@
 // Mapbox Access Token（預設放入提供的示範 Token，可自行替換）
 const MAPBOX_TOKEN =
   "pk.eyJ1Ijoiam9obmNoZW4yMDI0IiwiYSI6ImNtZXdhZ3ZyMzBsemMya3F4Y2NwMHN3ZmwifQ.nawrXjd_rNZXL7xVFIMZ-g";
+// Mapbox Access Token
+const MAPBOX_TOKEN = "your_mapbox_access_token";
 
 // Mapbox 樣式，可用 mapbox 官方樣式或自訂樣式
 const MAPBOX_STYLE_URL = "mapbox://styles/mapbox/streets-v11";
@@ -13,6 +15,7 @@ const MAPBOX_STYLE_URL = "mapbox://styles/mapbox/streets-v11";
 const WMS_TILE_URL =
   // 參數含 crs=EPSG:4326 與 bbox={bbox-epsg-4326}，便於直接疊在 Mapbox 上。
   "https://wms.nlsc.gov.tw/wms?service=WMS&request=GetMap&version=1.3.0&layers=LANDSECT&styles=default&format=image/png&transparent=true&crs=EPSG:4326&bbox={bbox-epsg-4326}&width=256&height=256&dpiMode=7&tilePixelRatio=0&featureCount=10&contextualWMSLegend=0";
+  "https://wms.nlsc.gov.tw/wms?service=WMS&request=GetMap&version=1.3.0&layers=LANDSECT&styles=default&format=image/png&transparent=true&crs=EPSG:4326&bbox={bbox-epsg-4326}&width=256&height=256";
 
 // 來自政府資料開放平台的 GeoJSON API 連結。
 // 範例（請替換為實際網址）：
